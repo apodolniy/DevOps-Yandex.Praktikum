@@ -11,7 +11,7 @@ backend:
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 20%
-  image: gitlab.praktikum-services.ru:5050/std-041-34/sausage-store/sausage-backend:1.0.2400417
+  image: gitlab.praktikum-services.ru:5050/std-000-00/sausage-store/sausage-backend:1.0.2400417
   containerPort: 8080
   resources:
     requests:
@@ -42,7 +42,7 @@ backend-report:
   name: sausage-backend-report
   revisionHistoryLimit: 12
   strategy: Recreate
-  image:  gitlab.praktikum-services.ru:5050/std-041-34/sausage-store/sausage-backend-report:1.0.2346847
+  image:  gitlab.praktikum-services.ru:5050/std-000-00/sausage-store/sausage-backend-report:1.0.2346847
   hpa:
     resources:
       minReplicas: 2
@@ -66,12 +66,12 @@ backend-report:
 
 frontend:
   name: sausage-store-frontend
-  fqdn: "podolnyy-artem-041.k8s.praktikum-services.tech"
+  fqdn: "ivanov-ivan-000.k8s.praktikum-services.tech"
   revisionHistoryLimit: 12
   port: 80
   replicas: 1
   strategy: Recreate
-  image:  gitlab.praktikum-services.ru:5050/std-041-34/sausage-store/sausage-frontend:1.0.2346845
+  image:  gitlab.praktikum-services.ru:5050/std-000-00/sausage-store/sausage-frontend:1.0.2346845
   resources:
     requests:
       memory: "64Mi"
@@ -79,17 +79,3 @@ frontend:
     limits:
       memory: "128Mi"
       cpu: "200m" 
-
-#yandex_cloud_services:
-  # Пример значений для сервиса Managed PostgreSQL
-#  - service: managed-postgresql
-#    serviceId: c9q3hs8tu7ig1o4ve7rg
-#    folderId: b1gsdm9dbf1eo4c862li
-#    bearer_token: <Токен авторизации>
-#    scrape_interval: 60s
-  # Пример значений для сервиса Managed MongoDB
-#  - service: managed-mongodb
-#    serviceId: cakvctgrte4hunhvs8f
-#    folderId: b1gsdm9dbf1eo4c862li
-#    bearer_token: AQVN3veeVseTVUm4RFjy-WRt9INXbdkS6Q8iC3Bh
-#    scrape_interval: 60s   
