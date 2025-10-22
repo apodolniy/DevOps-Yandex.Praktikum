@@ -1,6 +1,6 @@
 # Momo Store (Пельменная №2)  
 
-<img width="900" alt="Momo Store Home" src="https://storage.yandexcloud.net/momo-static/home.png">  
+<img width="900" alt="Momo Store Home" src="https://raw.githubusercontent.com/apodolniy/DevOps-Yandex.Praktikum/refs/heads/main/img/home.png">  
 
 Интернет-магазин "Пельменная №2" - полнофункциональное веб-приложение для продажи пельменей с современной микросервисной архитектурой и полным CI/CD пайплайном.  
 
@@ -174,7 +174,7 @@ GRAFANA_ADM_PWD	admin password
 ```bash
 # Добавление Helm репозитория  
 helm repo add momo-store \
-  http://nexus.praktikum-services.tech/repository/std-041-34-momo-store-helm/
+  http://nexus.praktikum-services.tech/repository/std-000-00-momo-store-helm/
 helm repo update
 
 # Установка приложения
@@ -254,11 +254,11 @@ variables:
 
 ### Доступ к системам мониторинга  
 Prometheus: https://prom.std-momo-store.mooo.com/  
-<img width="900" alt="Momo Store Home" src="https://storage.yandexcloud.net/momo-static/prom.png">  
+<img width="900" alt="Momo Store Home" src="https://raw.githubusercontent.com/apodolniy/DevOps-Yandex.Praktikum/refs/heads/main/img/prom.png">  
 
 Grafana: https://grafana.std-momo-store.mooo.com/  
 Бизнес-дашборд: https://grafana.std-momo-store.mooo.com/d/oSBaIdRIz/momo-store-business  
-<img width="900" alt="Momo Store Home" src="https://storage.yandexcloud.net/momo-static/grafanadashboard.png">  
+<img width="900" alt="Momo Store Home" src="https://raw.githubusercontent.com/apodolniy/DevOps-Yandex.Praktikum/refs/heads/main/img/grafanadashboard.png">  
 
 ## 🆘 Troubleshooting
 
@@ -285,9 +285,9 @@ kubectl describe pod -n momo-store <pod-name>
 
 ## 📞 Поддержка  
 
-Репозиторий: https://gitlab.praktikum-services.ru/std-041-34/momo-store  
+Репозиторий: https://gitlab.praktikum-services.ru/std-000-00/momo-store  
 Production: https://std-momo-store.mooo.com/  
-Helm Registry: http://nexus.praktikum-services.tech/repository/std-041-34-momo-store-helm/  
+Helm Registry: http://nexus.praktikum-services.tech/repository/std-000-00-momo-store-helm/  
 
 
 **Пельменная №2 © 2025 | Production**
