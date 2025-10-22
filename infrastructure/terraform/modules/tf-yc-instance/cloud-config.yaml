@@ -1,0 +1,11 @@
+#cloud-config
+users:
+  - name: ansible
+    shell: /bin/bash
+    groups: sudo
+    ssh_import_id: None
+    lock_passwd: False
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    homedir: /home/ansible
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDS2gbsN0aDt2rLzZrVThyRHnlyR17BJenYAvXuf0+IaCIZv60OGkqgK//b7jzD4HQXbSMbxkRbODaH6YLybevKqZedEt0UNEBjkhbo3QAkQfWYzclJsp86LLCcBugpb2K2D3C4hybubhFI6vbf4juBu3dAN6KoRZqogzAZhnYN353A2xn0oGvcCL5PGiNk7U4bo7XFhqJSSAtvgjtiwJ6nDv/q0mra5zXuoEi3qhWy3HPFT/31Pyi2fJtLAni7KO9DQO5VDEY3xl0WFyQ9mOnshxm+RQvt5IJHe5yJnnX7RwgPKnJAMjbDjQG0ITosqYNFsBnwSslCVE23ebdyej9GqsJg7MO86JhHdHJeWKLF+OT5BlSpsHCPOJEKrpIYG8VHSgcPw23FfdREZAu/IBn/uyLwYulyifDYYS2y/mlbplqjwd8gWW3jXgUDWky0Uyrl9ykrJmVxFfwVWy1vJ0zV8qE/UjI6oKuU8dniMGoI4KK69Ge5JDucwYWX0VDiVY8= student@fhm951toggt5f4r27135

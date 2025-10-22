@@ -1,0 +1,18 @@
+stages:
+  - deploy
+
+deploy-kuber:
+  stage: deploy
+  image: alpine/helm:3.5.3
+  when: manual
+  variables:
+    CHART: sausage-store-chart
+  before_script:
+    - mkdir -p $HOME/.kube
+    - echo -n $KUBE_CONFIG | base64 -d > $HOME/.kube/config
+  script:
+    - helm repo add nexus $NEXUS_HELM_REPO --username $NEXUS_HELM_USER --password $NEXUS_HELM_PASS
+    - helm repo update
+    - helm upgrade --install sausage-store-chart ./sausage-store-chart -n std-041-34 -f sausage-store-chart/values.yaml 
+  after_script:
+    - rm $HOME/.kube/config

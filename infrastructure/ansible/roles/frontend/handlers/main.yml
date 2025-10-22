@@ -1,0 +1,11 @@
+---
+- name: Reload systemd
+  systemd:
+    daemon_reload: true
+
+- name: Restart frontend
+  service:
+    name: frontend
+    enabled: true
+    state: restarted
+...

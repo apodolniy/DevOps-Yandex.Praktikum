@@ -1,0 +1,8 @@
+all: # Все серверы в нашем inventory, all - обязателен
+  children: # Дочерние группы для all
+    backend: # Группа хостов с именем backend
+      hosts:
+        10.128.0.26:
+    frontend:
+      hosts:
+        10.128.0.26: 

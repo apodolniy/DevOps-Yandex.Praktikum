@@ -1,0 +1,28 @@
+[Unit]
+Description=backend_service
+
+[Service]
+Type=simple
+User=backend
+Group=backend
+
+Environment=SPRING_DATASOURCE_URL="jdbc:postgresql://PSQL_HOST:PSQL_PORT/PSQL_DBNAME?ssl=true"
+Environment=SPRING_DATASOURCE_USERNAME="PSQL_USER"
+Environment=SPRING_DATASOURCE_PASSWORD="PSQL_PASSWORD"
+
+Environment=SPRING_DATA_MONGODB_URI="mongodb://MONGO_USER:MONGO_PASSWORD@MONGO_HOST:27018/MONGO_DATABASE?tls=true"
+
+Environment=REPORT_PATH=/var/sausage-store/reports
+Environment=LOG_PATH=/opt/log/
+Environment=LOG_FILE=sausage-store-backend.log
+Restart=always
+ExecStart=java \
+-Dmyserver.basePath='/opt/sausage-store/bin/' \
+-Dmyserver.bindAddr='127.0.0.1' \
+-Dmyserver.bindPort='8080' \
+-Dmyserver.hostName='Sausage-store' \
+-jar /opt/sausage-store/bin/sausage-store.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
